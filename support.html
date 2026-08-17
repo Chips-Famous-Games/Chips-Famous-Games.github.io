@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free Climb — Support</title>
+<meta name="description" content="Support, FAQs, and contact information for Free Climb, the hand-drawn tap-to-climb game for iPhone.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #3a3733;
+    --bg-deep: #2e2b27;
+    --card: #46423c;
+    --card-edge: #57524a;
+    --text: #faf9f6;
+    --muted: #b8b2a8;
+    --blue: #5bb8f0;
+    --blue-deep: #3d9fdd;
+    --gold: #e8c34a;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: "DM Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+    color: var(--text);
+    background:
+      radial-gradient(rgba(255,255,255,.05) 2.5px, transparent 2.5px),
+      linear-gradient(180deg, var(--bg) 0%, var(--bg-deep) 100%);
+    background-size: 46px 46px, 100% 100%;
+    background-attachment: fixed;
+    min-height: 100vh;
+    line-height: 1.6;
+  }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 0 24px 80px; }
+
+  /* Hero */
+  header { text-align: center; padding: 72px 0 48px; }
+  .logo {
+    font-family: "Baloo 2", sans-serif;
+    font-weight: 800;
+    font-size: clamp(3rem, 10vw, 4.5rem);
+    letter-spacing: .01em;
+    line-height: 1.05;
+  }
+  .logo .free { color: var(--text); }
+  .logo .climb { color: var(--blue); }
+  .tagline {
+    font-family: "Baloo 2", sans-serif;
+    font-weight: 500;
+    color: var(--muted);
+    font-size: 1.15rem;
+    margin-top: 6px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+  }
+  .peak {
+    width: 120px; height: 4px; border-radius: 2px;
+    background: linear-gradient(90deg, transparent, var(--blue), transparent);
+    margin: 28px auto 0;
+  }
+
+  h2 {
+    font-family: "Baloo 2", sans-serif;
+    font-weight: 700;
+    font-size: 1.6rem;
+    margin: 56px 0 18px;
+  }
+  h2 .accent { color: var(--blue); }
+
+  /* Contact card */
+  .contact {
+    background: linear-gradient(160deg, var(--card) 0%, #3f3b35 100%);
+    border: 1px solid var(--card-edge);
+    border-radius: 22px;
+    padding: 36px 32px;
+    text-align: center;
+    box-shadow: 0 18px 40px rgba(0,0,0,.30);
+  }
+  .contact p { color: var(--muted); max-width: 48ch; margin: 0 auto 24px; }
+  .btn {
+    display: inline-block;
+    font-family: "Baloo 2", sans-serif;
+    font-weight: 700;
+    font-size: 1.15rem;
+    color: #14293a;
+    background: linear-gradient(180deg, var(--blue) 0%, var(--blue-deep) 100%);
+    padding: 14px 34px;
+    border-radius: 999px;
+    text-decoration: none;
+    box-shadow: 0 8px 22px rgba(91,184,240,.35);
+    transition: transform .15s ease, box-shadow .15s ease;
+  }
+  .btn:hover { transform: translateY(-2px); box-shadow: 0 12px 28px rgba(91,184,240,.45); }
+  .email-plain { display: block; margin-top: 16px; color: var(--muted); font-size: .95rem; }
+  .email-plain a { color: var(--blue); text-decoration: none; }
+  .email-plain a:hover { text-decoration: underline; }
+  .reply-note { margin-top: 14px; font-size: .85rem; color: var(--muted); }
+
+  /* FAQ */
+  details {
+    background: var(--card);
+    border: 1px solid var(--card-edge);
+    border-radius: 16px;
+    margin-bottom: 12px;
+    overflow: hidden;
+    transition: border-color .2s ease;
+  }
+  details[open] { border-color: var(--blue); }
+  summary {
+    font-family: "Baloo 2", sans-serif;
+    font-weight: 700;
+    font-size: 1.05rem;
+    padding: 18px 22px;
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    user-select: none;
+  }
+  summary::-webkit-details-marker { display: none; }
+  summary::after {
+    content: "+";
+    font-size: 1.4rem;
+    color: var(--blue);
+    flex-shrink: 0;
+    transition: transform .2s ease;
+  }
+  details[open] summary::after { transform: rotate(45deg); }
+  .faq-body { padding: 0 22px 20px; color: var(--muted); }
+  .faq-body strong { color: var(--text); }
+
+  /* Tips row */
+  .tips { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 12px; }
+  .tip {
+    background: var(--card);
+    border: 1px solid var(--card-edge);
+    border-radius: 16px;
+    padding: 20px;
+  }
+  .tip .emoji { font-size: 1.6rem; display: block; margin-bottom: 8px; }
+  .tip b { font-family: "Baloo 2", sans-serif; display: block; margin-bottom: 4px; }
+  .tip span { color: var(--muted); font-size: .92rem; }
+
+  footer {
+    text-align: center;
+    margin-top: 72px;
+    color: var(--muted);
+    font-size: .85rem;
+  }
+  footer .brand { font-family: "Baloo 2", sans-serif; font-weight: 700; color: var(--text); }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="logo"><a href="index.html" style="text-decoration:none"><span class="free">FREE</span><span class="climb">CLIMB</span></a></div>
+    <div class="tagline">Support &amp; Help Center</div>
+    <div class="peak"></div>
+  </header>
+
+  <section class="contact" id="contact">
+    <h2 style="margin-top:0">Need a <span class="accent">belay</span>?</h2>
+    <p>Found a bug, lost your grip, or just have a question? Send an email and I'll get back to you as soon as I can. Free Climb is made by one person, so every message gets read.</p>
+    <a class="btn" href="mailto:Chip_wagner@Hotmail.com?subject=Free%20Climb%20Support">Email Support</a>
+    <span class="email-plain">or write to <a href="mailto:Chip_wagner@Hotmail.com">Chip_wagner@Hotmail.com</a></span>
+    <div class="reply-note">Tip: include your iPhone model and iOS version — it helps me fix things faster.</div>
+  </section>
+
+  <h2>Frequently Asked <span class="accent">Questions</span></h2>
+
+  <details>
+    <summary>How do I play?</summary>
+    <div class="faq-body">Tap a glowing hold to move a hand there and climb higher. Keep an eye on your energy bar — big holds are easy to hang on to, tiny ones tire you out fast. Reach the top before your energy runs out. The in-game tutorial (the Belay Class) walks you through everything in about a minute.</div>
+  </details>
+
+  <details>
+    <summary>Why do I keep falling?</summary>
+    <div class="faq-body">A few usual suspects: your <strong>energy ran out</strong> mid-wall (grab snack bars to refill it), you moved too fast on a <strong>small, slippery hold</strong> (the chalk bag goodie prevents slips), or you <strong>leapt for a faraway hold and missed</strong> — a miss on a big jump is always a fall. That one's on purpose. Be bold at your own risk!</div>
+  </details>
+
+  <details>
+    <summary>How do I unlock new levels and places?</summary>
+    <div class="faq-body">Points! Every climb you finish banks points toward your total, and your total unlocks harder levels and new places automatically — nothing is ever spent or taken away. Finish a wall after collecting <strong>every goodie</strong> on it and your points for that climb are doubled.</div>
+  </details>
+
+  <details>
+    <summary>Is my progress saved?</summary>
+    <div class="faq-body">Yes — your points and unlocks are saved on your device automatically. No account or sign-up is needed. Just don't delete the app, as removing it also removes its saved data.</div>
+  </details>
+
+  <details>
+    <summary>I found a bug. What should I tell you?</summary>
+    <div class="faq-body">Email me with your <strong>iPhone model</strong>, your <strong>iOS version</strong>, and what happened right before the problem. A screenshot or screen recording is gold. I fix bugs in the order they come in.</div>
+  </details>
+
+  <details>
+    <summary>Can I suggest a feature or a new location?</summary>
+    <div class="faq-body">Absolutely — ideas are always welcome. More places to climb are already on the way, and player suggestions help decide what comes next.</div>
+  </details>
+
+  <h2>Quick <span class="accent">Tips</span></h2>
+  <div class="tips">
+    <div class="tip"><span class="emoji">🍫</span><b>Snack bars</b><span>Refill your energy — grab them on long walls.</span></div>
+    <div class="tip"><span class="emoji">🧗</span><b>Chalk bag</b><span>No more slipping off tiny holds, for a little while.</span></div>
+    <div class="tip"><span class="emoji">⭐</span><b>Grab everything</b><span>Collect every goodie, finish the wall, double your points.</span></div>
+    <div class="tip"><span class="emoji">🧘</span><b>Pace yourself</b><span>Resting on a big comfy hold drains less energy.</span></div>
+  </div>
+
+  <footer>
+    <span class="brand">Free Climb</span> · Chip's Famous Games<br>
+    <a href="index.html" style="color: var(--blue); text-decoration: none;">Home</a> · <a href="privacy.html" style="color: var(--blue); text-decoration: none;">Privacy Policy</a><br>
+    Made by hand, one hold at a time.
+  </footer>
+
+</div>
+</body>
+</html>
