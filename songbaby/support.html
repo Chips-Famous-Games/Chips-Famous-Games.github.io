@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Song Baby — Support</title>
+<meta name="description" content="Support, FAQs and contact for Song Baby, the iPhone app that turns a hummed melody into notes, chords and MIDI.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #4a2f1f;
+    --bg-deep: #2f1d13;
+    --card: #f6ecd9;
+    --card-edge: #e2d0ae;
+    --ink: #3b2416;
+    --muted: #6f5644;
+    --cream: #f6ecd9;
+    --teal: #2b9a8b;
+    --blue: #3e76ab;
+    --green: #849b30;
+    --orange: #d9772b;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: "DM Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+    color: var(--ink);
+    background: radial-gradient(ellipse at 50% 20%, #8a5a35 0%, var(--bg) 45%, var(--bg-deep) 100%) fixed;
+    min-height: 100vh;
+    line-height: 1.6;
+  }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 0 20px 80px; }
+  header { text-align: center; padding: 72px 0 44px; color: var(--cream); }
+  .logo { font-family: "Fraunces", Georgia, serif; font-weight: 800; font-size: clamp(2.8rem, 10vw, 4.2rem); line-height: 1.05; }
+  .logo .baby { color: #7fd3c6; }
+  .tagline { font-weight: 500; color: #e9d6b8; font-size: 1rem; margin-top: 8px; letter-spacing: .14em; text-transform: uppercase; }
+  .dots { margin: 24px auto 0; display: flex; gap: 8px; justify-content: center; }
+  .dots i { width: 22px; height: 4px; border-radius: 2px; display: block; }
+  h2 { font-family: "Fraunces", Georgia, serif; font-weight: 600; font-size: 1.55rem; margin: 52px 0 16px; color: var(--cream); }
+  h2 .accent { color: #7fd3c6; }
+  .contact { background: var(--card); border: 2px solid var(--teal); border-radius: 22px; padding: 34px 28px; text-align: center; box-shadow: 0 18px 40px rgba(0,0,0,.3); }
+  .contact h2 { color: var(--ink); margin-top: 0; }
+  .contact h2 .accent { color: var(--teal); }
+  .contact p { color: var(--muted); max-width: 48ch; margin: 0 auto 22px; }
+  .btn { display: inline-block; font-weight: 700; font-size: 1.05rem; color: #fff; background: var(--teal); padding: 13px 32px; border-radius: 999px; text-decoration: none; box-shadow: 0 6px 18px rgba(43,154,139,.35); }
+  .btn:hover { background: #24877a; }
+  .email-plain { display: block; margin-top: 14px; color: var(--muted); font-size: .95rem; }
+  .email-plain a { color: var(--blue); }
+  .reply-note { margin-top: 12px; font-size: .85rem; color: var(--muted); }
+  details { background: var(--card); border: 1px solid var(--card-edge); border-radius: 16px; margin-bottom: 10px; overflow: hidden; }
+  details[open] { border-color: var(--teal); }
+  summary { font-weight: 700; font-size: 1.02rem; padding: 17px 20px; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+  summary::-webkit-details-marker { display: none; }
+  summary::after { content: "+"; font-size: 1.4rem; color: var(--teal); flex-shrink: 0; transition: transform .2s ease; }
+  details[open] summary::after { transform: rotate(45deg); }
+  .faq-body { padding: 0 20px 18px; color: var(--muted); }
+  .faq-body strong { color: var(--ink); }
+  footer { text-align: center; margin-top: 64px; color: #e9d6b8; font-size: .85rem; }
+  footer .brand { font-family: "Fraunces", Georgia, serif; font-weight: 600; color: var(--cream); }
+  footer a { color: #7fd3c6; text-decoration: none; }
+  footer a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="logo">Song <span class="baby">Baby</span></div>
+    <div class="tagline">Support &amp; Help</div>
+    <div class="dots"><i style="background:#2b9a8b"></i><i style="background:#3e76ab"></i><i style="background:#849b30"></i><i style="background:#d9772b"></i></div>
+  </header>
+
+  <section class="contact" id="contact">
+    <h2>Need a <span class="accent">hand</span>?</h2>
+    <p>Found a bug, lost an idea, or have a question? Send an email and I'll get back to you as soon as I can. Song Baby is made by one person, so every message gets read.</p>
+    <a class="btn" href="mailto:SUPPORT_EMAIL?subject=Song%20Baby%20Support">Email Support</a>
+    <span class="email-plain">or write to <a href="mailto:SUPPORT_EMAIL">SUPPORT_EMAIL</a></span>
+    <div class="reply-note">Tip: include your iPhone model and iOS version. It helps me fix things faster.</div>
+  </section>
+
+  <h2>Frequently Asked <span class="accent">Questions</span></h2>
+
+  <details>
+    <summary>How do I make my first song?</summary>
+    <div class="faq-body">Tap <strong>New Song</strong>, set a tempo (snap your fingers, tap along, or drag the slider), then sing or hum. Eight to ten seconds is plenty to start. Stop recording and Song Baby shows your notes, the keys that fit, and chords to go with them.</div>
+  </details>
+
+  <details>
+    <summary>Why can't Song Baby hear me?</summary>
+    <div class="faq-body">Song Baby needs microphone access. Open <strong>Settings › Privacy &amp; Security › Microphone</strong> and turn on Song Baby. Sing a little closer to the phone in a quiet room for the cleanest notes.</div>
+  </details>
+
+  <details>
+    <summary>How do I change the key or a chord?</summary>
+    <div class="faq-body">Tap any suggested key while your song plays to hear it in that key. To change a single chord, <strong>press and hold</strong> its bar and pick another one that fits.</div>
+  </details>
+
+  <details>
+    <summary>How do I get my song into Logic Pro or GarageBand?</summary>
+    <div class="faq-body">Open the song and tap <strong>Export MIDI</strong>. Send the file to your Mac with AirDrop or save it to Files, then open it in Logic Pro, GarageBand or any MIDI-compatible app.</div>
+  </details>
+
+  <details>
+    <summary>What does the unlock include?</summary>
+    <div class="faq-body">Your first 3 songs are free. The one-time <strong>Unlock Song Baby</strong> purchase lets you keep saving new songs forever. There's no subscription.</div>
+  </details>
+
+  <details>
+    <summary>I got a new iPhone. How do I restore my purchase?</summary>
+    <div class="faq-body">Open the unlock screen and tap <strong>Restore Purchase</strong>, signed in with the same Apple ID you bought it with.</div>
+  </details>
+
+  <details>
+    <summary>Are my recordings uploaded anywhere?</summary>
+    <div class="faq-body">No. Everything is analyzed and stored on your iPhone. See the <a href="privacy.html" style="color:#3e76ab">privacy policy</a> for details.</div>
+  </details>
+
+  <footer>
+    <span class="brand">Song Baby</span> · Chip's Famous Games<br>
+    <a href="../index.html">Chip's Famous Games</a> · <a href="privacy.html">Privacy Policy</a>
+  </footer>
+
+</div>
+</body>
+</html>
